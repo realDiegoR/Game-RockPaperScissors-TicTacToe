@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <title>Piedra Papel Tijera</title>
+  </head>
+  <body>
+    <section class="rps">
+      <section class="play">
+        <h2 class="play__title">¡Vamos a jugar!</h2>
+        <h4 class="play__choose">Elige una opción para jugar contra la máquina</h4>
+        <section class="play-options">
+          <section class="play-options__box">
+            <label class="option">
+              <span>Piedra</span>
+              <input type="radio" class="radio" name="juego" value="1" id="Piedra">
+              <span class="radio-check"></span>
+              <img class="play-options__img" src="./img/piedra.jpg" alt="">
+            </label>
+          </section>
+          <section class="play-options__box">
+            <label class="option">
+              <span>Papel</span>
+              <input type="radio" class="radio" name="juego" value="2" id="Papel">
+              <span class="radio-check"></span>
+              <img class="play-options__img" src="./img/papel.jpg" alt="">
+            </label>
+          </section>
+          <section class="play-options__box">
+            <label class="option">
+              <span>Tijera</span>
+              <input type="radio" class="radio" name="juego" value="3" id="Tijera">
+              <span class="radio-check"></span>
+              <img class="play-options__img" src="./img/tijera.jpg" alt="">
+            </label>
+          </section>
+        </section>
+        <button type="button" class="play__button" name="button" id="boton">¡Empezar!</button>
+      </section>
+      <section id="resultado">
+        <h1 id="resultado__title">RESULTADO</h1>
+        <h3 id="resultado__maquina"></h3>
+        <h2 id="resultado__ganador"></h2>
+        <h2 id="resultado__final"></h2>
+      </section>
+    </section>
+    <script src='app.js'></script>
+  </body>
+</html>

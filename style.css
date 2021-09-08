@@ -1,0 +1,124 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Handlee', cursive;
+  background: navajowhite
+}
+.rps{
+  background: rgba(255,255,255,0.3);
+  width: 50vw;
+  opacity: 0.8;
+  height: 100vh;
+  padding: 25px;
+}
+.play{
+  /* display: flex; */
+  /* flex-flow: column;
+  justify-content: center; */
+  /* margin: 20px auto; */
+  /* width: 56%; */
+  text-align: center;
+}
+.play__title{
+  font-size: 4.5rem;
+}
+.play__choose{
+  font-size: 3rem;
+}
+.play-options{
+  align-items: center;
+  border: 1px solid red;
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  position: relative;
+}
+.option{
+  display: flex;
+  flex-direction: column;:
+}
+.play-options__box{
+  bottom: 8px;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: pointer;
+}
+.play-options__img{
+  width: 50px;
+}
+.play-options__box .radio{
+  position: absolute;
+  opacity: 0;
+}
+.radio-check{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 18px;
+  left: 20px;
+  bottom: -20px;
+  position: absolute;
+  transition: 200ms all;
+  width: 18px;
+}
+.play-options__box:hover .radio-check{
+  background-color: red;
+  border: 2px solid white;
+}
+.play-options__box .radio:checked ~ .radio-check{
+  border: 2px solid white;
+  background-color: red;
+}
+.radio-check::after{
+  content: '';
+  position: absolute;
+  display: none;
+}
+.play-options__box .radio:checked ~ .radio-check::after{
+  display: block;
+}
+.play-options__box .radio-check::after{
+  background-color: white;
+  top: 4px;
+  left: 4.15px;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+.play__button{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  /* color: white; */
+  cursor: pointer;
+  font-size: 1.6rem;
+  height: 50px;
+  margin: 10px auto 0;
+  transition: 350ms all;
+  width: 150px;
+}
+.play__button:hover{
+  background-color: red;
+}
+#resultado{
+  display: none;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 180px
+}
+#resultado__title{
+  text-decoration: underline;
+
+}
+#resultado__maquina, #resultado__ganador{
+  margin-top: 10px;
+}
