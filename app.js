@@ -1,15 +1,29 @@
 const checkboxes = document.getElementsByName('juego');
+const button = document.getElementById('boton');
 const startScreen = document.getElementById('startScreen');
 const rockPaperScissorsGame = document.getElementById('rps');
+rockPaperScissorsGame.classList.add("disable-click")
 let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
-  turn: 0
+  turn: 0,
+  name: null
 }
 let machine = {};
 let hands = {
   player: null,
   cpu: null
-};
+}
 
+//PONIENDO EL BOTON BONITO
+button.onmouseover = () => {
+  if ([...checkboxes].some( radio => radio.checked == true )) {
+    button.classList.add("play__button_hover")
+  }
+}
+button.onmouseout = () => {
+  button.classList.remove("play__button_hover")
+}
+
+//EMPIEZA EL JUEGO
 function startGame(startingHand){
   if (startingHand === 'x') {
     hands.player = 'x';
@@ -19,14 +33,15 @@ function startGame(startingHand){
     hands.cpu = 'x'
   }
   startScreen.classList.add("hide")
+  rockPaperScissorsGame.classList.remove("disable-click")
 }
 
 //MANTIENE ILUSTRACION DE SELECCION DE MANO
 const options = document.getElementsByClassName('play-options__box');
-for (let button of options) {
-  button.addEventListener("click", (ev) => {
+for (let btn of options) {
+  btn.addEventListener("click", (ev) => {
     quitSelectedVisually();
-    button.classList.add("selected")
+    btn.classList.add("selected")
   })
 }
 
@@ -36,7 +51,7 @@ function quitSelectedVisually(){
   }
 }
 //IMPRIME EL GANADOR
-document.getElementById('boton').addEventListener('click', mostrar);
+button.addEventListener('click', mostrar);
 function mostrar(){
   for (let caja of checkboxes) {
     if (caja.checked) {
