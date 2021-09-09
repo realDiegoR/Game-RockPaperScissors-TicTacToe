@@ -8,7 +8,17 @@ html{
 }
 body{
   font-family: 'Handlee', cursive;
-  background: navajowhite
+  background: navajowhite;
+  display: flex;
+}
+.title{
+  position: absolute;
+  left: 0;
+  text-align: center;
+  right: 0;
+  margin: 5px auto 0;
+  font-size: 4.5rem;
+  width: 100%;
 }
 .rps{
   background: rgba(255,255,255,0.3);
@@ -18,94 +28,68 @@ body{
   padding: 25px;
 }
 .play{
-  /* display: flex; */
-  /* flex-flow: column;
-  justify-content: center; */
-  /* margin: 20px auto; */
-  /* width: 56%; */
   text-align: center;
 }
-.play__title{
-  font-size: 4.5rem;
-}
 .play__choose{
+  margin-top: 40px;
   font-size: 3rem;
 }
 .play-options{
   align-items: center;
-  border: 1px solid red;
+  border-radius: 10px;
   display: flex;
-  height: 70px;
+  height: 150px;
   justify-content: space-around;
+  margin-top: 10px;
   position: relative;
 }
 .option{
   display: flex;
-  flex-direction: column;:
+  cursor: pointer;
+  height: 100%;
+  flex-direction: column;
 }
 .play-options__box{
+  padding: 15px;
   bottom: 8px;
   font-size: 2.3rem;
   letter-spacing: 1px;
   position: relative;
   cursor: pointer;
+  transition: 150ms all;
+}
+.play-options__box:hover{
+  border: 2px solid black;
+  box-shadow: 3px 3px 5px gray;
+}
+.selected{
+  border: 2px solid black;
+  box-shadow: 3px 3px 5px gray;
 }
 .play-options__img{
-  width: 50px;
+  border-radius: 25%;
+  width: 90px;
+  border: 2px solid black;
 }
 .play-options__box .radio{
   position: absolute;
   opacity: 0;
 }
-.radio-check{
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 50%;
-  height: 18px;
-  left: 20px;
-  bottom: -20px;
-  position: absolute;
-  transition: 200ms all;
-  width: 18px;
-}
-.play-options__box:hover .radio-check{
-  background-color: red;
-  border: 2px solid white;
-}
-.play-options__box .radio:checked ~ .radio-check{
-  border: 2px solid white;
-  background-color: red;
-}
-.radio-check::after{
-  content: '';
-  position: absolute;
-  display: none;
-}
-.play-options__box .radio:checked ~ .radio-check::after{
-  display: block;
-}
-.play-options__box .radio-check::after{
-  background-color: white;
-  top: 4px;
-  left: 4.15px;
-  border-radius: 50%;
-  height: 6px;
-  width: 6px;
-}
 .play__button{
-  background-color: white;
+  background-color: #fff;
   border: 1px solid black;
   border-radius: 5px;
-  /* color: white; */
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  font-weight:bold;
   height: 50px;
   margin: 10px auto 0;
   transition: 350ms all;
   width: 150px;
 }
 .play__button:hover{
-  background-color: red;
+  background-color: #ddd;
+  box-shadow: 1px 1px 10px gray;
 }
 #resultado{
   display: none;

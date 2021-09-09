@@ -1,10 +1,20 @@
 let checkboxes = document.getElementsByName('juego');
 document.getElementById('boton').addEventListener('click', mostrar);
-var winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
+let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
   turn: 0
 };
-var machine = {};
+let machine = {};
 
+//MANTIENE ILUSTRACION DE SELECCION DE MANO
+const options = document.getElementsByClassName('play-options__box')
+for (let button of options) {
+  button.addEventListener("click", (ev) => {
+    for (let btn of options) {
+      btn.classList.remove("selected")
+    }
+    button.classList.add("selected")
+  })
+}
 //IMPRIME EL GANADOR
 function mostrar(){
   for (let caja of checkboxes) {

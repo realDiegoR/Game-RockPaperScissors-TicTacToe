@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tictac.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <title>Piedra Papel Tijera</title>
   </head>
   <body>
+    <h1 class="title">Tic Tac Toe <i>Remix</i></h2>
     <section class="rps">
       <section class="play">
-        <h2 class="play__title">¡Vamos a jugar!</h2>
         <h4 class="play__choose">Elige una opción para jugar contra la máquina</h4>
         <section class="play-options">
           <section class="play-options__box">
@@ -49,6 +50,21 @@
         <h2 id="resultado__final"></h2>
       </section>
     </section>
+    <section class="tictactoe">
+      <h4 class="play__choose">Elige una posición</h4>
+      <section class="board">
+        <div class="position" id="position1"></div>
+        <div class="position" id="position2"></div>
+        <div class="position" id="position3"></div>
+        <div class="position" id="position4"></div>
+        <div class="position" id="position5"></div>
+        <div class="position" id="position6"></div>
+        <div class="position" id="position7"></div>
+        <div class="position" id="position8"></div>
+        <div class="position" id="position9"></div>
+      </section>
+    </section>
     <script src='app.js'></script>
+    <script src="tictactoe.js" charset="utf-8"></script>
   </body>
 </html>
