@@ -3,15 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="tictac.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tictac.css">
+    <link rel="stylesheet" href="./css/start.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <title>Piedra Papel Tijera</title>
   </head>
   <body>
-    <h1 class="title">Tic Tac Toe <i>Remix</i></h2>
+    <h1 class="title">Tic Tac Toe <i>Remix</i></h1>
+    <section class="start">
+      <h1 class="welcome">¡Bienvenido!</h1>
+      <h3 class="balance">Balance</h3>
+      <div class="games">
+        <p class="games__info">Partidas Ganadas</p>
+        <p class="games__info" id="games_winned">0</p>
+        <p class="games__info">Partidas Perdidas</p>
+        <p class="games__info" id="games_lost">0</p>
+      </div>
+      <h3 class="choose">Elige tu ficha para Comenzar</h3>
+      <div class="choose_buttons">
+        <button type="button" class="x_or_o" onclick=""><img src="./img/x.png"/></button>
+        <button type="button" class="x_or_o" onclick=""><img src="./img/o.png"/></button>
+      </div>
+    </section>
     <section class="rps">
       <section class="play">
         <h4 class="play__choose">Elige una opción para jugar contra la máquina</h4>
@@ -52,7 +68,7 @@
     </section>
     <section class="tictactoe">
       <h4 class="play__choose">Elige una posición</h4>
-      <section class="board">
+      <section class="board" id="board">
         <div class="position" id="position1"></div>
         <div class="position" id="position2"></div>
         <div class="position" id="position3"></div>
@@ -64,6 +80,7 @@
         <div class="position" id="position9"></div>
       </section>
     </section>
+
     <script src='app.js'></script>
     <script src="tictactoe.js" charset="utf-8"></script>
   </body>
