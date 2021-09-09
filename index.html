@@ -13,7 +13,7 @@
   </head>
   <body>
     <h1 class="title">Tic Tac Toe <i>Remix</i></h1>
-    <section class="start">
+    <section class="start" id="startScreen">
       <h1 class="welcome">¡Bienvenido!</h1>
       <h3 class="balance">Balance</h3>
       <div class="games">
@@ -24,11 +24,11 @@
       </div>
       <h3 class="choose">Elige tu ficha para Comenzar</h3>
       <div class="choose_buttons">
-        <button type="button" class="x_or_o" onclick=""><img src="./img/x.png"/></button>
-        <button type="button" class="x_or_o" onclick=""><img src="./img/o.png"/></button>
+        <button type="button" class="x_or_o" onclick="startGame('x')"><img src="./img/x.png"/></button>
+        <button type="button" class="x_or_o" onclick="startGame('o')"><img src="./img/o.png"/></button>
       </div>
     </section>
-    <section class="rps">
+    <section class="rps" id="rps">
       <section class="play">
         <h4 class="play__choose">Elige una opción para jugar contra la máquina</h4>
         <section class="play-options">
@@ -57,7 +57,7 @@
             </label>
           </section>
         </section>
-        <button type="button" class="play__button" name="button" id="boton">¡Empezar!</button>
+        <button type="button" class="play__button" name="button" id="boton">¡Ya!</button>
       </section>
       <section id="resultado">
         <h1 id="resultado__title">RESULTADO</h1>

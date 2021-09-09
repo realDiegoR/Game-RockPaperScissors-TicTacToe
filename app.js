@@ -1,21 +1,42 @@
-let checkboxes = document.getElementsByName('juego');
-document.getElementById('boton').addEventListener('click', mostrar);
+const checkboxes = document.getElementsByName('juego');
+const startScreen = document.getElementById('startScreen');
+const rockPaperScissorsGame = document.getElementById('rps');
 let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
   turn: 0
-};
+}
 let machine = {};
+let hands = {
+  player: null,
+  cpu: null
+};
+
+function startGame(startingHand){
+  if (startingHand === 'x') {
+    hands.player = 'x';
+    hands.cpu = 'o';
+  } else {
+    hands.player = 'o';
+    hands.cpu = 'x'
+  }
+  startScreen.classList.add("hide")
+}
 
 //MANTIENE ILUSTRACION DE SELECCION DE MANO
-const options = document.getElementsByClassName('play-options__box')
+const options = document.getElementsByClassName('play-options__box');
 for (let button of options) {
   button.addEventListener("click", (ev) => {
-    for (let btn of options) {
-      btn.classList.remove("selected")
-    }
+    quitSelectedVisually();
     button.classList.add("selected")
   })
 }
+
+function quitSelectedVisually(){
+  for (let btn of options) {
+    btn.classList.remove("selected")
+  }
+}
 //IMPRIME EL GANADOR
+document.getElementById('boton').addEventListener('click', mostrar);
 function mostrar(){
   for (let caja of checkboxes) {
     if (caja.checked) {
@@ -25,10 +46,32 @@ function mostrar(){
       document.getElementById('resultado__ganador').innerHTML = "Ganador: " + gana;
       document.getElementById('resultado__final').innerHTML = winner.name;
       console.log(winner)
+      caja.checked = false;
+      quitSelectedVisually();
+      if (winner.turn) jumpToTictactoe(winner.turn)
     }
   }
 }
 
+function jumpToTictactoe(turn){
+  rockPaperScissorsGame.classList.add("disable-click")
+  if (turn === 1) {
+    board.classList.remove("disable-click")
+  } else if (turn === 2) {
+      machineSelect();
+      board.classList.remove("disable-click")
+  }
+}
+
+function machineSelect(){
+  do {
+    let randomNumber = Math.random().toString().slice(-1) - 1;
+    console.log(randomNumber)
+    var selectedBox = board.children[randomNumber];
+  } while (selectedBox.style.backgroundImage !== '')
+  selectedBox.style.backgroundImage = `url(./img/${hands.cpu}.png)`;
+  winCheck(2);
+}
 //DETERMINA EL NUMERO EN FUNCION DEL SEGUNDO ACTUAL
 function numeroMaquina(){
   let random = Math.random().toString().slice(-1);
