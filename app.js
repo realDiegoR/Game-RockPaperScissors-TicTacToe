@@ -2,10 +2,16 @@ const checkboxes = document.getElementsByName('juego');
 const button = document.getElementById('boton');
 const startScreen = document.getElementById('startScreen');
 const rockPaperScissorsGame = document.getElementById('rps');
-rockPaperScissorsGame.classList.add("disable-click")
+const tictactoe = document.getElementById('tictactoe');
+rockPaperScissorsGame.classList.add("disable-click", "blur")
+tictactoe.classList.add("blur")
 let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
   turn: 0,
   name: null
+}
+let winCount = {
+  p1: 0,
+  p2: 0
 }
 let machine = {};
 let hands = {
@@ -32,8 +38,9 @@ function startGame(startingHand){
     hands.player = 'o';
     hands.cpu = 'x'
   }
-  startScreen.classList.add("hide")
-  rockPaperScissorsGame.classList.remove("disable-click")
+  startScreen.classList.add("hide");
+  rockPaperScissorsGame.classList.remove("disable-click", "blur");
+  tictactoe.classList.add("blur")
 }
 
 //MANTIENE ILUSTRACION DE SELECCION DE MANO
@@ -69,23 +76,28 @@ function mostrar(){
 }
 
 function jumpToTictactoe(turn){
-  rockPaperScissorsGame.classList.add("disable-click")
+  tictactoe.classList.remove("blur")
+  rockPaperScissorsGame.classList.add("disable-click", "blur")
   if (turn === 1) {
-    board.classList.remove("disable-click")
+    tictactoe.classList.remove("disable-click")
   } else if (turn === 2) {
       machineSelect();
-      board.classList.remove("disable-click")
+      tictactoe.classList.remove("disable-click")
   }
 }
 
 function machineSelect(){
-  do {
-    let randomNumber = Math.random().toString().slice(-1) - 1;
-    console.log(randomNumber)
-    var selectedBox = board.children[randomNumber];
-  } while (selectedBox.style.backgroundImage !== '')
-  selectedBox.style.backgroundImage = `url(./img/${hands.cpu}.png)`;
-  winCheck(2);
+  setTimeout(() => {
+    do {
+      let randomNumber = Math.random().toString().slice(-1) - 1;
+      console.log(randomNumber)
+      var selectedBox = board.children[randomNumber];
+    } while (selectedBox.style.backgroundImage !== '');
+    if (startScreen.classList.contains("hide")){
+      selectedBox.style.backgroundImage = `url(./img/${hands.cpu}.png)`;
+      winCheck();
+    }
+  }, 400)
 }
 //DETERMINA EL NUMERO EN FUNCION DEL SEGUNDO ACTUAL
 function numeroMaquina(){
