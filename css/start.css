@@ -1,0 +1,55 @@
+.start{
+  box-shadow: 0 0 100px dimgray;
+  background: #FFB0CD;
+  position: absolute;
+  text-align: center;
+  width: 450px;
+  top: calc(50% - 225px);
+  left: calc(50% - 225px);
+  height: 450px;
+  z-index: 9;
+}
+.welcome{
+  margin: 10px;
+  font-size: 5rem;
+}
+.balance{
+  font-size: 4rem;
+}
+.games{
+  display: flex;
+  font-size: 2.5rem;
+  width: 250px;
+  justify-content: space-evenly;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.games__info{
+  background: white;
+  padding: 5px;
+  border: 2px solid black;
+  flex-grow: 1;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.choose{
+  font-size: 3rem;
+  margin-top: 20px;
+}
+.x_or_o{
+  background: ;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 15px;
+  transition: all 150ms;
+}
+.x_or_o:hover{
+  transform: scale(1.1) ;
+}
+.choose_buttons img{
+  width: 90px;
+}
+.hide{
+  display: none;
+}

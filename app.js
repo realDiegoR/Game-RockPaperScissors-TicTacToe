@@ -7,7 +7,6 @@ rockPaperScissorsGame.classList.add("disable-click", "blur")
 tictactoe.classList.add("blur")
 let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
   turn: 0,
-  name: null
 }
 let winCount = {
   p1: 0,
@@ -64,13 +63,19 @@ function mostrar(){
     if (caja.checked) {
       document.getElementById('resultado').style.display = 'flex';
       let gana = final(caja);
-      document.getElementById('resultado__maquina').innerHTML = `Jugador sacó: ${caja.id} | Maquina sacó: ${machine.name}`;
+      document.getElementById('player').innerHTML = "Jugador: " + caja.id;
+      document.getElementById('cpu').innerHTML = "Máquina: " + machine.name;
+      // document.getElementById('resultado__maquina').innerHTML = `Jugador sacó: ${caja.id} | Maquina sacó: ${machine.name}`;
       document.getElementById('resultado__ganador').innerHTML = "Ganador: " + gana;
-      document.getElementById('resultado__final').innerHTML = winner.name;
+      // document.getElementById('resultado__final').innerHTML = winner.name;
       console.log(winner)
       caja.checked = false;
       quitSelectedVisually();
-      if (winner.turn) jumpToTictactoe(winner.turn)
+      if (winner.turn){
+        setTimeout(function(){
+          jumpToTictactoe(winner.turn)
+        }, 400)
+      }
     }
   }
 }
@@ -93,6 +98,44 @@ function machineSelect(){
       console.log(randomNumber)
       var selectedBox = board.children[randomNumber];
     } while (selectedBox.style.backgroundImage !== '');
+
+    let newSelectedBox;
+    for (let i = 0; i < 8; i++) {
+      if (board.children[i].style.backgroundImage) {
+        if (i != 2 || i != 5 || i != 8) {
+          if (board.children[i].style.backgroundImage == board.children[i + 1].style.backgroundImage) {
+            if (i % 3 == 0) {
+              newSelectedBox = board.children[i + 2].style.backgroundImage || board.children[i + 2]
+            } else {
+              newSelectedBox = board.children[i - 1].style.backgroundImage || board.children[i - 1]
+            }
+          }
+        }
+        if (i == 0 || i == 3 || i == 6) {
+          if (board.children[i].style.backgroundImage == board.children[i + 2].style.backgroundImage) {
+            newSelectedBox = board.children[i + 1].style.backgroundImage || board.children[i + 1]
+          }
+        }
+      }
+    }
+    for (let i = 0; i < 6; i++) {
+      if (board.children[i].style.backgroundImage) {
+        if (board.children[i].style.backgroundImage == board.children[i + 3].style.backgroundImage) {
+          if (i < 3) {
+            newSelectedBox = board.children[i + 6].style.backgroundImage || board.children[i + 6]
+          } else {
+            newSelectedBox = board.children[i - 3].style.backgroundImage || board.children[i - 3]
+          }
+        }
+      }
+    }
+
+    if (typeof newSelectedBox == "object") {
+      console.log(newSelectedBox)
+      if (!newSelectedBox.style.backgroundImage) {
+        selectedBox = newSelectedBox
+      }
+    }
     if (startScreen.classList.contains("hide")){
       selectedBox.style.backgroundImage = `url(./img/${hands.cpu}.png)`;
       winCheck();
@@ -132,39 +175,24 @@ function numeroMaquina(){
 function comparar(persona, maquina){
   let resultado;
   if (persona == maquina) {
-    resultado = 'Empate!';
+    resultado = 'Empate';
     winner.turn = 0;
-    winner.name = '¡Empataron!';
   }
   else if (maquina == 1 && persona == 2) {
-    resultado = 'Gana Papel!'
+    resultado = 'Jugador'
     winner.turn = 1;
-    winner.name = '¡Ganaste!'
   }
   else if (maquina == 2 && persona == 3){
-    resultado = 'Gana Tijera!'
+    resultado = 'Jugador'
     winner.turn = 1;
-    winner.name = '¡Ganaste!'
   }
   else if (maquina == 3 && persona == 1){
-    resultado = 'Gana Piedra!';
+    resultado = 'Jugador';
     winner.turn = 1;
-    winner.name = '¡Ganaste!';
   }
   else{
-    switch (maquina) {
-      case 1:
-        resultado = 'Gana Piedra!';
-        break;
-      case 2:
-        resultado = 'Gana Papel!'
-        break;
-      case 3:
-        resultado = 'Gana Tijera!'
-        break;
-    }
+    resultado = 'Máquina'
     winner.turn = 2;
-    winner.name = '¡Perdiste!'
   }
   return resultado;
 }
