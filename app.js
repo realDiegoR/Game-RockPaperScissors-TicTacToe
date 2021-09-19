@@ -105,15 +105,27 @@ function machineSelect(){
         if (i != 2 || i != 5 || i != 8) {
           if (board.children[i].style.backgroundImage == board.children[i + 1].style.backgroundImage) {
             if (i % 3 == 0) {
-              newSelectedBox = board.children[i + 2].style.backgroundImage || board.children[i + 2]
+              board.children[i + 2].style.backgroundImage || ( newSelectedBox = board.children[i + 2])
             } else {
-              newSelectedBox = board.children[i - 1].style.backgroundImage || board.children[i - 1]
+              board.children[i - 1].style.backgroundImage || ( newSelectedBox = board.children[i - 1])
             }
           }
         }
         if (i == 0 || i == 3 || i == 6) {
           if (board.children[i].style.backgroundImage == board.children[i + 2].style.backgroundImage) {
-            newSelectedBox = board.children[i + 1].style.backgroundImage || board.children[i + 1]
+            board.children[i + 1].style.backgroundImage || ( newSelectedBox = board.children[i + 1])
+          }
+        }
+        if (i == 0 || i == 4) {
+          if (board.children[i].style.backgroundImage == board.children[i + 4].style.backgroundImage) {
+            if (i == 0) {
+              board.children[i + 1].style.backgroundImage || ( newSelectedBox = board.children[i + 8])
+            } else {
+              board.children[i + 1].style.backgroundImage || ( newSelectedBox = board.children[i - 4])
+            }
+          }
+          if (board.children[0].style.backgroundImage == board.children[8].style.backgroundImage) {
+            board.children[4].style.backgroundImage || ( newSelectedBox = board.children[4])
           }
         }
       }
@@ -122,10 +134,31 @@ function machineSelect(){
       if (board.children[i].style.backgroundImage) {
         if (board.children[i].style.backgroundImage == board.children[i + 3].style.backgroundImage) {
           if (i < 3) {
-            newSelectedBox = board.children[i + 6].style.backgroundImage || board.children[i + 6]
+            board.children[i + 6].style.backgroundImage || ( newSelectedBox = board.children[i + 6])
           } else {
-            newSelectedBox = board.children[i - 3].style.backgroundImage || board.children[i - 3]
+            board.children[i - 3].style.backgroundImage || ( newSelectedBox = board.children[i - 3])
           }
+        }
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      if (board.children[i].style.backgroundImage) {
+        if (board.children[i].style.backgroundImage == board.children[i + 6].style.backgroundImage) {
+          board.children[i + 3].style.backgroundImage || ( newSelectedBox = board.children[i + 3])
+        }
+      }
+    }
+    for (let i = 2; i <= 4; i += 2) {
+      if (board.children[i].style.backgroundImage) {
+        if (board.children[i].style.backgroundImage == board.children[i + 2].style.backgroundImage) {
+          if (i == 2) {
+            board.children[i + 4].style.backgroundImage || ( newSelectedBox = board.children[i + 4])
+          } else {
+            board.children[i - 2].style.backgroundImage || ( newSelectedBox = board.children[i - 2])
+          }
+        }
+        if (board.children[i].style.backgroundImage == board.children[i + 4].style.backgroundImage) {
+          board.children[i + 2].style.backgroundImage || ( newSelectedBox = board.children[i + 2])
         }
       }
     }

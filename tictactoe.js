@@ -48,7 +48,11 @@ function winCheck(win){
     selectingWinner(box[2].style.backgroundImage)
   }
   if (box.every( caja => Boolean(caja.style.backgroundImage))) {
-    alert("Hubo un empate")
+    Swal.fire({
+      title: "Pudo ser mejor",
+      text: "Hubo un empate",
+      icon: "warning"
+    })
     box.forEach( caja => {
       caja.style.backgroundImage = '';
     })
@@ -59,13 +63,23 @@ function winCheck(win){
 
 function selectingWinner(symbol){
   if (symbol) {
-    if (symbol.includes(hands.player)) {
-      alert("Ganó el jugador");
-      gamesWin.innerHTML = ++winCount.p1;
-    } else {
-      alert("Ganó la CPU");
-      gamesLost.innerHTML = ++winCount.p2
-    }
+      if (symbol.includes(hands.player)) {
+        Swal.fire({
+          title: "¡Felicitaciones!",
+          text: "Ganaste el juego",
+          icon: "success",
+          width: 500
+        });
+        gamesWin.innerHTML = ++winCount.p1;
+      } else {
+        Swal.fire({
+          title: "Oh... vaya",
+          text: "Intentalo de nuevo",
+          icon: "error",
+          width: 500
+        });
+        gamesLost.innerHTML = ++winCount.p2
+      }
     box.forEach( caja => {
       caja.style.backgroundImage = '';
     })
