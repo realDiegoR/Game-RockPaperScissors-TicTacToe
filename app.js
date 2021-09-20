@@ -102,7 +102,7 @@ function machineSelect(){
     let newSelectedBox;
     for (let i = 0; i < 8; i++) {
       if (board.children[i].style.backgroundImage) {
-        if (i != 2 || i != 5 || i != 8) {
+        if (i != 2 && i != 5 && i != 8) {
           if (board.children[i].style.backgroundImage == board.children[i + 1].style.backgroundImage) {
             if (i % 3 == 0) {
               board.children[i + 2].style.backgroundImage || ( newSelectedBox = board.children[i + 2])
@@ -119,9 +119,9 @@ function machineSelect(){
         if (i == 0 || i == 4) {
           if (board.children[i].style.backgroundImage == board.children[i + 4].style.backgroundImage) {
             if (i == 0) {
-              board.children[i + 1].style.backgroundImage || ( newSelectedBox = board.children[i + 8])
+              board.children[8].style.backgroundImage || ( newSelectedBox = board.children[8])
             } else {
-              board.children[i + 1].style.backgroundImage || ( newSelectedBox = board.children[i - 4])
+              board.children[0].style.backgroundImage || ( newSelectedBox = board.children[0])
             }
           }
           if (board.children[0].style.backgroundImage == board.children[8].style.backgroundImage) {
@@ -157,8 +157,8 @@ function machineSelect(){
             board.children[i - 2].style.backgroundImage || ( newSelectedBox = board.children[i - 2])
           }
         }
-        if (board.children[i].style.backgroundImage == board.children[i + 4].style.backgroundImage) {
-          board.children[i + 2].style.backgroundImage || ( newSelectedBox = board.children[i + 2])
+        if (board.children[2].style.backgroundImage == board.children[6].style.backgroundImage) {
+          board.children[2].style.backgroundImage || ( newSelectedBox = board.children[6])
         }
       }
     }
