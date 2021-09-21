@@ -9,15 +9,17 @@ board.addEventListener("click", (ev) => {
     winCheck();
     if (winner.turn === 1) {
       machineSelect();
-      if (startScreen.classList.contains("hide")) {
+      if (!winner.exist) {
         setTimeout( ()=> {
           tictactoe.classList.add("disable-click", "blur");
           rockPaperScissorsGame.classList.remove("disable-click", "blur");
         }, 500)
       }
     } else {
-      tictactoe.classList.add("disable-click", "blur");
-      rockPaperScissorsGame.classList.remove("disable-click", "blur");
+      if (!winner.exist) {
+        tictactoe.classList.add("disable-click", "blur");
+        rockPaperScissorsGame.classList.remove("disable-click", "blur");
+      }
     }
   }
 })
@@ -48,21 +50,25 @@ function winCheck(win){
     selectingWinner(box[2].style.backgroundImage)
   }
   if (box.every( caja => Boolean(caja.style.backgroundImage))) {
-    Swal.fire({
-      title: "Pudo ser mejor",
-      text: "Hubo un empate",
-      icon: "warning"
-    })
-    box.forEach( caja => {
-      caja.style.backgroundImage = '';
-    })
-    startScreen.classList.remove("hide")
-    tictactoe.classList.add("disable-click", "blur")
+    if (!winner.exist) {
+      Swal.fire({
+        title: "Pudo ser mejor",
+        text: "Hubo un empate",
+        icon: "warning"
+      })
+      box.forEach( caja => {
+        caja.style.backgroundImage = '';
+      })
+      startScreen.classList.remove("hide")
+      tictactoe.classList.add("disable-click", "blur")
+    }
   }
 }
 
 function selectingWinner(symbol){
   if (symbol) {
+    winner.exist = true;
+    setTimeout(function(){
       if (symbol.includes(hands.player)) {
         Swal.fire({
           title: "¡Felicitaciones!",
@@ -80,12 +86,17 @@ function selectingWinner(symbol){
         });
         gamesLost.innerHTML = ++winCount.p2
       }
-    box.forEach( caja => {
-      caja.style.backgroundImage = '';
-    })
-    startScreen.classList.remove("hide")
-    rockPaperScissorsGame.classList.add("disable-click", "blur")
-    tictactoe.classList.add("disable-click", "blur")
-    document.getElementById('resultado').style.display = 'none';
+      box.forEach( caja => {
+        caja.style.backgroundImage = '';
+      })
+      startScreen.classList.remove("hide")
+      rockPaperScissorsGame.classList.add("disable-click", "blur")
+      tictactoe.classList.add("disable-click", "blur")
+      document.getElementById('resultado').style.display = 'none';
+    }, 1000)
   }
+}
+
+function restart() {
+
 }

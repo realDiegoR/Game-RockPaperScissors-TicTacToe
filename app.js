@@ -7,6 +7,7 @@ rockPaperScissorsGame.classList.add("disable-click", "blur")
 tictactoe.classList.add("blur")
 let winner = {    // EMPATE = 0 - GANA P1 = 1 - GANA P2/CPU - 2
   turn: 0,
+  exist: false
 }
 let winCount = {
   p1: 0,
@@ -37,6 +38,7 @@ function startGame(startingHand){
     hands.player = 'o';
     hands.cpu = 'x'
   }
+  winner.exist = false;
   startScreen.classList.add("hide");
   rockPaperScissorsGame.classList.remove("disable-click", "blur");
   tictactoe.classList.add("blur")
@@ -158,7 +160,7 @@ function machineSelect(){
           }
         }
         if (board.children[2].style.backgroundImage == board.children[6].style.backgroundImage) {
-          board.children[2].style.backgroundImage || ( newSelectedBox = board.children[6])
+          board.children[4].style.backgroundImage || ( newSelectedBox = board.children[4])
         }
       }
     }
@@ -169,7 +171,7 @@ function machineSelect(){
         selectedBox = newSelectedBox
       }
     }
-    if (startScreen.classList.contains("hide")){
+    if (!winner.exist){
       selectedBox.style.backgroundImage = `url(./img/${hands.cpu}.png)`;
       winCheck();
     }
