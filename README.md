@@ -1,4 +1,4 @@
-# Rock, Paper and Scissors | Tic Tac Toe MIX
+# Rock, Paper and Scissors | Tic Tac Toe Game
 ## Description
 This game mix the "Rock, Paper and Scissors" and "Tic Tac Toe" mechanics into a single game.
 - It only features Player vs CPU mode
