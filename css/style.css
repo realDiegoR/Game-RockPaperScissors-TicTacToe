@@ -125,6 +125,7 @@ body{
   align-items: center;
   justify-content: center;
   font-size: 2.8rem;
+  margin-top: 10px;
 }
 #resultado__title{
   text-decoration: underline;
