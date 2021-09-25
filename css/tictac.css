@@ -6,11 +6,10 @@
   transition: 400ms all;
 }
 .board{
-  width: 302px;
+  width: 300px;
+  height: 300px;
   margin: 60px auto 30px;
-  height: 302px;
-  border: 1px solid black;
-  text-align: left;
+  outline: 1px solid black;
 }
 .position{
   width: 100px;

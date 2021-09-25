@@ -8,8 +8,8 @@ board.addEventListener("click", (ev) => {
     ev.target.style.backgroundImage = `url(./img/${hands.player}.png)`;
     winCheck();
     if (winner.turn === 1) {
-      machineSelect();
       if (!winner.exist) {
+        machineSelect();
         setTimeout( ()=> {
           tictactoe.classList.add("disable-click", "blur");
           rockPaperScissorsGame.classList.remove("disable-click", "blur");
@@ -51,6 +51,7 @@ function winCheck(win){
   }
   if (box.every( caja => Boolean(caja.style.backgroundImage))) {
     if (!winner.exist) {
+      winner.exist = true;
       Swal.fire({
         title: "Pudo ser mejor",
         text: "Hubo un empate",
@@ -61,6 +62,7 @@ function winCheck(win){
       })
       startScreen.classList.remove("hide")
       tictactoe.classList.add("disable-click", "blur")
+      document.getElementById('resultado').style.display = 'none';
     }
   }
 }
