@@ -55,7 +55,11 @@ function winCheck(win){
       Swal.fire({
         title: "Pudo ser mejor",
         text: "Hubo un empate",
-        icon: "warning"
+        width: 500,
+        imageUrl: "https://th.bing.com/th/id/OIP.g0KBuaJr6CJznGOXLN7wygHaEb?pid=ImgDet&rs=1",
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: "Ups"
       })
       box.forEach( caja => {
         caja.style.backgroundImage = '';
@@ -75,16 +79,22 @@ function selectingWinner(symbol){
         Swal.fire({
           title: "¡Felicitaciones!",
           text: "Ganaste el juego",
-          icon: "success",
-          width: 500
+          width: 500,
+          imageUrl: "https://th.bing.com/th/id/R.ac3c098cab749a8d1d115a64bb29c381?rik=%2fYlEq7yOAkbDgw&riu=http%3a%2f%2fwww.nairaland.com%2fattachments%2f2629677_image_jpeg9f360c5ab7736510df54c882e9dbf188&ehk=J4C7yoaRhD99UUe7CVsFm%2bWUhcEFJ%2fcaRFbyPl%2b%2bFT8%3d&risl=&pid=ImgRaw&r=0",
+          imageWidth: 350,
+          imageHeight: 270,
+          imageAlt: "Not Bad!",
         });
         gamesWin.innerHTML = ++winCount.p1;
       } else {
         Swal.fire({
           title: "Oh... vaya",
           text: "Intentalo de nuevo",
-          icon: "error",
-          width: 500
+          width: 500,
+          imageUrl: "https://th.bing.com/th/id/R.e2e2e3c81af2f08d33556155796301d6?rik=p217qdxblQiPiA&pid=ImgRaw&r=0",
+          imageWidth: 350,
+          imageHeight: 270,
+          imageAlt: ":(",
         });
         gamesLost.innerHTML = ++winCount.p2
       }
