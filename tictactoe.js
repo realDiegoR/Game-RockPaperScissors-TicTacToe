@@ -1,9 +1,11 @@
 const gamesWin = document.getElementById("games_winned");
 const gamesLost = document.getElementById("games_lost");
 const board = document.getElementById("board");
+board.style.backgroundImage = "true";
 const box = [...board.children];
 tictactoe.classList.add("disable-click")
 board.addEventListener("click", (ev) => {
+  if (ev.target == board) return false;
   if (!ev.target.style.backgroundImage) {
     ev.target.style.backgroundImage = `url(./img/${hands.player}.png)`;
     winCheck();
@@ -22,7 +24,7 @@ board.addEventListener("click", (ev) => {
       }
     }
   }
-})
+}, true)
 
 function winCheck(win){
   if (box[0].style.backgroundImage == box[1].style.backgroundImage && box[0].style.backgroundImage == box[2].style.backgroundImage){
