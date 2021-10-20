@@ -110,7 +110,3 @@ function selectingWinner(symbol){
     }, 1000)
   }
 }
-
-function restart() {
-
-}

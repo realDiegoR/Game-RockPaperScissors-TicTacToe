@@ -91,12 +91,14 @@ function jumpToTictactoe(turn){
   } else if (turn === 2) {
     setTimeout(() => {
       machineSelect();
-      tictactoe.classList.remove("disable-click")
+      if (!winner.exist) {
+        tictactoe.classList.remove("disable-click")
+      }
     }, 400)
   }
 }
 
-function machineSelect(cb){
+function machineSelect(){
   do {
     let randomNumber = Math.random().toString().slice(-1) - 1;
     console.log(randomNumber)

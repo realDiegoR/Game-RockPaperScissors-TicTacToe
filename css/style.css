@@ -109,9 +109,9 @@ body{
   align-items: center;
   margin-top: 8px;
   display: flex;
+  font-size: 2.2rem;
 }
 .mano_texto{
-  font-size: 2.2rem;
 }
 .ficha_elegida{
   width: 25px;
