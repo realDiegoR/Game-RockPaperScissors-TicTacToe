@@ -11,11 +11,11 @@ board.addEventListener("click", (ev) => {
     winCheck();
     if (winner.turn === 1) {
       if (!winner.exist) {
-        machineSelect();
         setTimeout( ()=> {
+          machineSelect();
           tictactoe.classList.add("disable-click", "blur");
           rockPaperScissorsGame.classList.remove("disable-click", "blur");
-        }, 500)
+        }, 400)
       }
     } else {
       if (!winner.exist) {

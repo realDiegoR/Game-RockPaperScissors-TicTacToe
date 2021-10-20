@@ -34,8 +34,8 @@
 }
 .blur{
   opacity: 0.4;
+  border: 3px dashed black;
 }
 .disable-click{
   pointer-events: none;
-  border: 3px dashed black;
 }
