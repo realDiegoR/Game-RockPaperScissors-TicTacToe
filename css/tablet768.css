@@ -39,6 +39,10 @@
   margin: 0;
   padding: 8px;
   font-size: 25px;
+  text-align: center
+}
+#player.spec{
+  margin-right: 5px;
 }
 .mano_jugador{
   font-size: 20px;

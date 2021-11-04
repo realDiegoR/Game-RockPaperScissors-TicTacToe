@@ -1,4 +1,5 @@
 .tictactoe{
+  border: 3px dashed black;
   width: 50vw;
   height: 100vh;
   text-align: center;
@@ -34,7 +35,7 @@
 }
 .blur{
   opacity: 0.4;
-  border: 3px dashed black;
+  border: 0;
 }
 .disable-click{
   pointer-events: none;

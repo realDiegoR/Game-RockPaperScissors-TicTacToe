@@ -27,6 +27,7 @@ body{
   width: 50vw;
   height: 100vh;
   padding: 60px 25px;
+  border: 3px dashed black;
   transition: 400ms all;
 }
 .play{
@@ -110,8 +111,6 @@ body{
   margin-top: 8px;
   display: flex;
   font-size: 2.2rem;
-}
-.mano_texto{
 }
 .ficha_elegida{
   width: 25px;
