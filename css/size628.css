@@ -10,15 +10,17 @@ h3{
     width: 100vw;
     height: auto;
     padding: 0 8px;
-    border: 2px solid black;
+    border: 0;
+    border-bottom: 3px solid black;
     padding-top: 30px;
 }
 .tictactoe{
     width: 100vw;
     height: auto;
-    border: 2px solid black;
+    border: 0;
     padding: 0;
     flex: 1;
+    border-top: 3px solid black;
 }
 
 .title{
