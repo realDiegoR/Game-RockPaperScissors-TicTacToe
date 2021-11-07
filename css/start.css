@@ -9,6 +9,25 @@
   height: 450px;
   z-index: 9;
 }
+.instructions{
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-size: 1.3rem;
+  /* background: whitesmoke; */
+  padding: 4px;
+  border-radius: 5px;
+  /* box-shadow: 0px 2px 8px rgba(40, 45, 70, 0.5); */
+  background-image: url("./../img/info.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 200ms all;
+}
+.instructions:hover{
+  transform: scale(1.15)
+}
 .welcome{
   margin: 10px;
   font-size: 5rem;

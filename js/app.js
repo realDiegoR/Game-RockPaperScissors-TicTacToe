@@ -19,6 +19,18 @@ let hands = {
   cpu: null
 }
 
+//MOSTRAR INSTRUCCIONES
+function showInstructions() {
+  Swal.fire({
+    title: "Instrucciones",
+    html: `Este juego combina las mecanicas de "Piedra, Papel y Tijera" y "Tic Tac Toe" en un solo juego.<br><br>
+    En la pantalla de inicio puedes ver una tabla de puntuacion y dos fichas para elegir y usarlas en la mecanica de Tic Tac Toe.<br><br>
+    Una vez que elijas una ficha, seras llevado a jugar "Piedra, Papel o Tijera" y el sujeto que gane el enfrentamiento sera el primero en colocar su ficha en Tic Tac Toe, <b>solo por esta ronda</b>.<br><br>
+    Esta mecanica se repite hasta que haya un ganador de Tic Tac Toe. Puedes comenzar de nuevo una vez que el juego haya terminado`,
+    icon: "info"
+  })
+  
+}
 //PONIENDO EL BOTON BONITO
 button.onmouseover = () => {
   if ([...checkboxes].some( radio => radio.checked == true )) {
