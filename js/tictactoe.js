@@ -69,6 +69,7 @@ function winCheck(win){
       startScreen.classList.remove("hide")
       tictactoe.classList.add("disable-click", "blur")
       document.getElementById('resultado').style.display = 'none';
+      document.getElementById("resultado__ganador").innerHTML = '';
     }
   }
 }
@@ -107,6 +108,7 @@ function selectingWinner(symbol){
       rockPaperScissorsGame.classList.add("disable-click", "blur")
       tictactoe.classList.add("disable-click", "blur")
       document.getElementById('resultado').style.display = 'none';
+      document.getElementById("resultado__ganador").innerHTML = '';
     }, 1000)
   }
 }
