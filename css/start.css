@@ -6,7 +6,6 @@
   width: 450px;
   top: calc(50% - 225px);
   left: calc(50% - 225px);
-  height: 450px;
   z-index: 9;
 }
 .instructions{
@@ -14,10 +13,8 @@
   left: 20px;
   top: 25px;
   font-size: 1.3rem;
-  /* background: whitesmoke; */
   padding: 4px;
   border-radius: 5px;
-  /* box-shadow: 0px 2px 8px rgba(40, 45, 70, 0.5); */
   background-image: url("./../img/info.png");
   background-size: cover;
   width: 30px;
@@ -37,7 +34,7 @@
 }
 .games{
   display: flex;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   width: 250px;
   justify-content: space-evenly;
   margin: auto;
@@ -48,6 +45,7 @@
   padding: 5px;
   border: 2px solid black;
   flex-grow: 1;
+  margin: 10px 10px 5px;
   margin-top: 10px;
   margin-left: 5px;
 }
@@ -65,6 +63,9 @@
 }
 .x_or_o:hover{
   transform: scale(1.1) ;
+}
+.choose_buttons{
+  margin-bottom: 10px;
 }
 .choose_buttons img{
   width: 90px;
