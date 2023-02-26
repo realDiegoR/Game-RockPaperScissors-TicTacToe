@@ -1,0 +1,38 @@
+@media screen and (max-width: 768px) {
+	.title {
+		font-size: 35px;
+	}
+	.play__choose {
+		font-size: 26px;
+		margin-top: 20px;
+	}
+	.play-options__img {
+		width: 80px;
+	}
+	.play-options {
+		height: 120px;
+	}
+	.option {
+		font-size: 2rem;
+		padding: 10px;
+	}
+	.play__button {
+		width: 120px;
+		height: 40px;
+		font-size: 16px;
+		margin-top: 10px;
+	}
+
+	.results__table-row {
+		font-size: 2rem;
+	}
+
+	.board {
+		width: 250px;
+		height: 250px;
+	}
+	.position {
+		width: 83.33333px;
+		height: 83.33333px;
+	}
+}

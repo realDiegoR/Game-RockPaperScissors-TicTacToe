@@ -1,0 +1,88 @@
+@media screen and (max-width: 628px) {
+	body {
+		height: 100vh;
+		flex-direction: column;
+	}
+	.game-container {
+		flex-direction: column;
+	}
+	h3 {
+		font-weight: normal;
+	}
+	.rps {
+		width: 100%;
+		/* height: auto; */
+		padding: 0 8px;
+		border: 0;
+		border-bottom: 3px solid black;
+		padding-top: 30px;
+	}
+	.tictactoe {
+		/* width: 100vw; */
+		height: auto;
+		border: 0;
+		padding: 0;
+		flex: 1;
+		border-top: 3px solid black;
+	}
+
+	.title {
+		font-size: 2.7rem;
+		padding: 2px;
+	}
+	.play__choose {
+		margin: 20px 0 10px;
+		font-size: 22px;
+	}
+	.play-options {
+		height: 100px;
+	}
+	.option {
+		font-size: 18px;
+	}
+	.play-options__img {
+		width: 70px;
+	}
+	.play__button {
+		margin-top: 10px;
+		width: 110px;
+		height: 35px;
+	}
+
+	.board {
+		margin: auto;
+		margin-bottom: 30px;
+	}
+
+	.start {
+		width: 280px;
+		left: calc(50% - 140px);
+		top: calc(50% - 160px);
+	}
+	.instructions {
+		left: 15px;
+		top: 15px;
+		width: 22px;
+		height: 22px;
+	}
+	.start-modal__welcome {
+		font-size: 30px;
+	}
+	.start-modal__balance {
+		font-size: 25px;
+	}
+	.start-modal__games {
+		font-size: 1.9rem;
+	}
+	.start-modal__games__info {
+		padding: 3px;
+		margin-top: 5px;
+	}
+	.start-modal__choose {
+		font-size: 22px;
+		margin-top: 15px;
+	}
+	.start-modal__choose_buttons img {
+		width: 70px;
+	}
+}

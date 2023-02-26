@@ -1,0 +1,14 @@
+@media screen and (max-width: 1052px) {
+	.play {
+		width: 100%;
+	}
+	.play__choose {
+		font-size: 30px;
+	}
+	.rps {
+		padding: 60px 10px;
+	}
+	.play-options__img {
+		width: 90px;
+	}
+}

@@ -1,7 +1,9 @@
 .tictactoe{
-  border: 3px dashed black;
-  width: 50vw;
-  height: 100vh;
+  /* border-left: 3px dashed black; */
+  /* width: 50vw; */
+  /* height: 100%; */
+  flex-grow: 1;
+  flex-basis: 1fr;
   text-align: center;
   padding: 60px 25px;
   transition: 400ms all;
@@ -34,9 +36,13 @@
   padding-top: 20px !important;
 }
 .blur{
-  opacity: 0.4;
+  opacity: 0.2;
   border: 0;
 }
 .disable-click{
   pointer-events: none;
+}
+
+.hide{
+  display: none;
 }
